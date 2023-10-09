@@ -1,0 +1,134 @@
+.main_title_login
+{
+    font-family: 'Roboto', sans-serif;
+    color: rgb(48, 19, 144);
+}
+
+    .main_logo {
+        width:12%;
+        height:10%;
+    } 
+
+.container_main_login {
+        box-shadow: 3px 3px 5px;
+        border-radius: 5%;
+        border-style: solid;
+        border-width: 1px;
+        border-color: #89b0d4;
+    }
+
+    
+
+    .container_main_login{
+        position: absolute;
+        left: 0%;
+        transform: translateX(-50%);
+        top: 45%;
+        transform: translateY(-50%);
+        margin:3%;
+    }
+
+    .main_title_login{
+        font-size: 5vw;
+    }
+    .btn_fixed_footer{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    /* Tablet */
+    @media (min-width: 480px) {
+
+
+        .container_main_login{
+            position: absolute;
+            left: 5%;
+            transform: translateX(-50%);
+            top: 40%;
+            transform: translateY(-50%);
+            margin:3%;
+        }
+
+    }
+
+    /* Laptop */
+    @media (min-width: 720px) {
+
+        .main_title_login{
+            font-size: 4vw;
+        }
+
+        .main_logo {
+            width: 35%;
+            height:100%;
+        }
+
+        .container_main_login{
+            position: absolute;
+            left: 10%;
+            transform: translateX(-50%);
+            top: 40%;
+            transform: translateY(-50%);
+            margin:3%;
+        }
+
+    }
+
+    /* Laptops */
+    @media (min-width: 1024px) {
+
+        .main_title_login{
+            font-size: 3vw;
+        }
+
+
+        .container_main_login{
+            position: absolute;
+            left: 10%;
+            transform: translateX(-50%);
+            top: 45%;
+            transform: translateY(-50%);
+            margin:0% 15%;
+        }
+
+    }
+
+
+
+    label {
+    color: #546E7A;
+    display: block;
+    margin: 2px;
+    }
+
+
+
+    input[type="text"],
+    input[type="tel"],
+    select,
+    textarea {
+    box-sizing: border-box;
+    margin:4px 0;
+    width: 100%;
+    }
+
+    textarea{
+    font-size:small;
+    }
+
+
+
+    .link:active,
+    .link:hover{
+    color:#DD0000;
+    }
+
+    .error{
+    color:#E53935;
+    }
+
+    .success{
+    color:#43A047;
+    }

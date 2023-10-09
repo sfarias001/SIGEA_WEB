@@ -1,0 +1,16 @@
+/* Selecciona el sidebar por su clase CSS */
+.custom-sidebar {
+  background: #1F3D7C !important;
+}
+
+.main_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    height: 60px;
+    background-color: #1F3D7C;
+  }
+  
+  .icon {
+    margin-left: auto; 
+  }
