@@ -46,73 +46,73 @@ regIncidente() {
   Swal.fire({
     title: 'Nuevo incidente',
     html: `
-      <form style="display: flex; flex-direction: row; width:100%;">
-        <div class="form-group" style="display: flex; flex-direction: column; margin-right: 20px;">
-          <label for="region">Región</label>
+      <form style="display: flex; justify-content:center; align-items:center;">
+        <div style="margin-right:20px;">
+          <label for="region" style="float:left;">Región</label>
           <input type="text" class="form-control" id="region" [(ngModel)]="formData.region">
 
-          <label for="inmueble">Inmueble</label>
+          <label for="inmueble" style="float:left;">Inmueble</label>
           <input type="text" class="form-control" id="inmueble" [(ngModel)]="formData.inmueble">
 
-          <label for="tipo_alarma">Tipo de alarma</label>
+          <label for="tipo_alarma" style="float:left;">Tipo de alarma</label>
           <input type="text" class="form-control" id="tipo_alarma" [(ngModel)]="formData.tipo_alarma">
 
-          <label for="particion">´Partición</label>
+          <label for="particion" style="float:left;">´Partición</label>
           <input type="text" class="form-control" id="particion" [(ngModel)]="formData.particion">
 
-          <label for="zona">Zona</label>
+          <label for="zona" style="float:left;">Zona</label>
           <input type="text" class="form-control" id="zona" [(ngModel)]="formData.zona">
 
         </div>
 
-        <div class="form-group" style="display: flex; flex-direction: column; align-items: flex-end; margin-right: 20px;">
-          <label for="descripcion_zona">Descripción de la zona</label>
+        <div style="margin-right:20px;">
+          <label for="descripcion_zona" style="float:left;">Descripción de la zona</label>
           <input type="text" class="form-control" id="descripcion_zona" [(ngModel)]="formData.descripcion_zona">
         
-          <div class="form-group">
-            <label for="fecha">Fecha</label>
-            <input type="date" class="form-control" id="fecha" [(ngModel)]="formData.fecha">
+          <div class="display:flex;">
+            <label for="fecha" style="float:left;">Fecha</label>
+            <input type="date" class="form-control" id="fecha" [(ngModel)]="formData.fecha" style="width:100px;">
 
-            <label for="hora">Hora</label>
-            <input type="text" class="form-control" id="hora" [(ngModel)]="formData.hora">
+            <label for="hora" style="float:left;">Hora</label>
+            <input type="time" class="form-control" id="hora" [(ngModel)]="formData.hora" style="width:100px;">
          </div>
 
-          <label for="atiende">Atiende CRM/CMC</label>
+         
+          <label for="atiende" style="float:left;">Atiende CRM/CMC</label>
           <input type="text" class="form-control" id="atiende" [(ngModel)]="formData.atiende">
 
-          <label for="motivo">Motivo</label>
+          <label for="motivo" style="float:left;">Motivo</label>
           <input type="text" class="form-control" id="atiende" [(ngModel)]="formData.motivo">
         
          </div>
 
-          <div class="form-group" style="display: flex; flex-direction: column; align-items: flex-end; margin-right: 20px;">
-
-            <label for="quiern_reporta">Quien reporta</label>
+          <div >
+            <label for="quiern_reporta" style="float:left;">Quien reporta</label>
             <input type="text" class="form-control" id="quien_reporta" [(ngModel)]="formData.quien_reporta">
 
             
-            <label for="quiern_reporta">Registro de evento</label>
+            <label for="quiern_reporta" style="float:left;">Registro de evento</label>
             <input type="text" class="form-control" id="registro_evento" [(ngModel)]="formData.registro_evento">
 
             
-            <label for="quiern_reporta">Causa</label>
+            <label for="quiern_reporta" style="float:left;">Causa</label>
             <input type="text" class="form-control" id="causa" [(ngModel)]="formData.causa">
 
             
-            <label for="quiern_reporta">Activación de alarma</label>
+            <label for="quiern_reporta" style="float:left;">Activación de alarma</label>
             <input type="text" class="form-control" id="activacion_alarma" [(ngModel)]="formData.activacion_alarma">
 
             
-            <label for="quiern_reporta">Acción</label>
+            <label for="quiern_reporta" style="float:left;">Acción</label>
             <input type="text" class="form-control" id="accion" [(ngModel)]="formData.accion">
 
           </div>
       </form>
     `,
-    showCloseButton: true,
-    showCancelButton: true,
+    // showCancelButton: true,
     confirmButtonText: 'Registrar',
-    cancelButtonText: 'Cancelar',
+    width: '85%',
+    // cancelButtonText: 'Cancelar',
     preConfirm: () => {
       console.log('Nombre:', this.formData.nombre);
       console.log('Email:', this.formData.email);
