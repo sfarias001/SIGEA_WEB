@@ -76,9 +76,9 @@ formData= {
               </div>
 
               <div>
-              <label for="fecha_novedad">Fecha:</label>
-              <input type="date" class="form-control" id="fecha_novedad" [(ngModel)]="formData.fecha_novedad">
-            </div>
+                <label for="fecha_novedad">Fecha:</label>
+                <input type="date" class="form-control" id="fecha_novedad" [(ngModel)]="formData.fecha_novedad">
+              </div>
 
 
         </form>
