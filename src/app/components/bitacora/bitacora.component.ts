@@ -1,11 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 
-import { Service, BitacoraData } from './bitacora.service';
+import { Service } from '../../services/bitacora/bitacora.service';
 import Swal from 'sweetalert2';
-
-
-
+import { Bitacora } from 'src/app/models/bitacora';
 
 @Component({
   selector: 'app-bitacora',
@@ -13,41 +11,71 @@ import Swal from 'sweetalert2';
   styleUrls: ['./bitacora.component.css'],
   providers: [Service],
 })
-export class BitacoraComponent implements OnInit{
-  bitacoraItems: BitacoraData[] = [];
+export class BitacoraComponent implements OnInit {
+  bitacoraItems: Bitacora[] = [];
   pageSize: number = 10;
+  imagen: string | undefined = '';
+  imagenTemplate: string = '';
 
   constructor(private service: Service) {}
 
   ngOnInit(): void {
-    this.bitacoraItems  = this.service.getBitacora();
+    this.bitacoraItems = this.service.getBitacora();
 
-    for (const item of this.bitacoraItems) {
-      if (item.Detalle) {
-        for (const detalle of item.Detalle) {
-          if (detalle.ImagenUrl) {
-            detalle.ImagenUrl = `assets/${detalle.ImagenUrl}`;
-          }
-        }
+    this.bitacoraItems.forEach((element) => {
+      if (element.DetalleImagen?.imagenes != undefined) {
+        console.log('e = ', element.DetalleImagen?.imagenes[0].url);
+        let ruta = element.DetalleImagen?.imagenes[0].url;
+        console.log("ruta = ",ruta);
+        
+        this.imagen = ruta;
+        this.imagenTemplate = `
+    <ng-template let-data="data">
+      <img src="${ruta}" alt="Imagen" style="width: 35px;">
+    </ng-template>
+  `;
       }
-    }
+    });
+
+    // for (let item of this.bitacoraItems) {
+    //   // if (item.Detalle) {
+    //   //   for (const detalle of item) {
+    //   //       detalle.ImagenUrl = `assets/images${detalle.Image}`;
+    //   //   }
+    //   // }
+    // }
     this.items = [
       { label: 'Home', icon: 'pi pi-fw pi-home', routerLink: '/home' },
-      { label: 'Calendario', icon: 'pi pi-fw pi-calendar', routerLink: '/calendario' },        
-      { label: 'Incidentes', icon: 'pi pi-exclamation-triangle', routerLink: '/incidentes' },
-      { label: 'Consulta de bitácora', icon: 'pi pi-book', routerLink: '/bitacora' },
-      { label: 'Actividades de alto riesgo', icon: 'pi pi-info', routerLink: '/alto_riesgo' }
-  ];
+      {
+        label: 'Calendario',
+        icon: 'pi pi-fw pi-calendar',
+        routerLink: '/calendario',
+      },
+      {
+        label: 'Incidentes',
+        icon: 'pi pi-exclamation-triangle',
+        routerLink: '/incidentes',
+      },
+      {
+        label: 'Consulta de bitácora',
+        icon: 'pi pi-book',
+        routerLink: '/bitacora',
+      },
+      {
+        label: 'Actividades de alto riesgo',
+        icon: 'pi pi-info',
+        routerLink: '/alto_riesgo',
+      },
+    ];
   }
-  
 
   items: MenuItem[] | undefined;
 
   // Sweet alert
-formData= {
-  nombre: '',
-  email: ''
-}
+  formData = {
+    nombre: '',
+    email: '',
+  };
 
   regNovedad() {
     Swal.fire({
@@ -97,8 +125,7 @@ formData= {
       preConfirm: () => {
         // console.log('Nombre:', this.formData.nombre);
         // console.log('Email:', this.formData.email);
-      }
+      },
     });
   }
-
 }
