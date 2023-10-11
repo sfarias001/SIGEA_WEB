@@ -1,29 +1,26 @@
-
 <app-home></app-home>
-
 
 <div>
   <h1 class="text-center">Listado bitácora de novedades</h1>
-  <img (click)="regNovedad()" src="../../../assets/images/add_report.png" alt="" style="cursor: pointer; max-width: 50px; float: right; margin: 1%;">
+  <img
+    (click)="regNovedad()"
+    src="../../../assets/images/add_report.png"
+    alt=""
+    style="cursor: pointer; max-width: 50px; float: right; margin: 1%"
+  />
 </div>
 
-<div style="width: 100%; overflow-x: auto; margin: 1%;">
-
-  <dx-data-grid
-    [dataSource]="bitacoraItems"
-    [showBorders]="true"
-  >
+<div style="width: 100%; overflow-x: auto; margin: 1%">
+  <dx-data-grid [dataSource]="bitacoraItems" [showBorders]="true">
     <dxo-paging [pageSize]="pageSize"></dxo-paging>
     <dxi-column dataField="Fecha" caption="Fecha"></dxi-column>
     <dxi-column dataField="Titulo" caption="Titulo"></dxi-column>
-    <dxi-column dataField="Detalle" caption="Detalle" [cellTemplate]="detalleTemplate"></dxi-column>
-
-    <ng-template #detalleTemplate let-data>
-      <div *ngFor="let detalle of data.Detalle">
-        <div>{{ detalle.Texto }}</div>
-        <img [src]="detalle.ImagenUrl" alt="Imagen">
-      </div>
-    </ng-template>
+    <dxi-column
+      dataField="DetalleImagen.imagenes[0].url"
+      caption="DetalleImagen"
+      [cellTemplate]="imagenTemplate"
+    ></dxi-column>
+    
   </dx-data-grid>
 
 </div>
