@@ -1,17 +1,113 @@
 
 <app-home></app-home>
 
-<h1 class="text-center">Calendario</h1>
+  <div class="d-flex">
+    <h1 class="text-center" style="margin: 1%;">Localidad</h1>   
+  </div>
 
 
-
-<dx-scheduler
-  timeZone="America/Los_Angeles"
-  [dataSource]="appointmentsData"
-  [views]="['day', 'week', 'workWeek', 'month']"
-  currentView="day"
+  <dx-scheduler
+  timeZone="America/Mexico_City"
+  
+  [dataSource]="activitiesData"
+  [views]="views"
+  currentView="week"
+  [startDayHour]="6"
+  [endDayHour]="23"
   [currentDate]="currentDate"
-  [startDayHour]="9"
-  [height]="600"
+  [height]="500"
+  [width]="1250"
+  appointmentTemplate="appointmentTemplate"
+  (onAppointmentFormOpening)="onAppointmentFormOpening($event)"
 >
+  <dxi-view
+    name="Día"
+    type="day"
+    [intervalCount]="1"
+    [startDate]="daysViewStartDate"
+  >
+  </dxi-view>
+  <dxi-view
+    name="Semana"
+    type="workWeek"
+    [intervalCount]="1"
+    [startDate]="weeksViewStartDate"
+  >
+  </dxi-view>
+  <dxi-view name="Mes" type="month" [intervalCount]="1"> </dxi-view>
+
+  <div *dxTemplate="let model of 'appointmentTemplate'">
+    <i>{{model.appointmentData.nombreActividad}}</i>
+    <p>{{model.appointmentData.descripcion}}</p>
+  </div>
+
+
+<!-- appointmentTooltipTemplate="tooltip-template" -->
+
+
+<!-- <div *dxTemplate="let model of 'tooltip-template'">
+  <div class="movie-tooltip">
+    <img [src]="getMovieById(model.appointmentData.movieId).image" />
+    <div class="movie-info">
+      <div class="movie-title">
+        {{
+          getMovieById(model.appointmentData.movieId).text +
+            " (" +
+            getMovieById(model.appointmentData.movieId).year +
+            ")"
+        }}
+      </div>
+      <div>
+        {{
+          "Director: " + getMovieById(model.appointmentData.movieId).director
+        }}
+      </div>
+      <div>
+        {{
+          "Duration: " +
+            getMovieById(model.appointmentData.movieId).duration +
+            " minutes"
+        }}
+      </div>
+    </div>
+  </div>
+</div> -->
+  
 </dx-scheduler>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Directorio -->
+  <button id="directory" type="button" class="btn mx-auto text-center" (click)="sidebarDirectory = true" style="border-radius: 30px;">
+    <span class="material-symbols-outlined">
+      contacts
+    </span>
+  </button>
+
+  <!-- Sidebar directorio -->
+  <p-sidebar  [(visible)]="sidebarDirectory" position="right" styleClass="custom-sidebar">
+    <div>
+      <h3>Directorio</h3>
+      
+      <span class="p-input-icon-left">
+        <i class="pi pi-search"></i>
+        <input type="text" pInputText [(ngModel)]="value" />
+        
+    </span>
+    </div>
+  </p-sidebar>
+
+
+
+
+

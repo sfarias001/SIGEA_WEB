@@ -1,11 +1,16 @@
+
 <div class="container_main_login" style="padding: 5%; background-color: rgb(255, 255, 255); opacity: 0.9; border-radius: 2%;">
 
-    <img class="main_logo" src="../assets/images/user_login.png" alt="">
-    <h1 class="text-center main_title_login">Inicio de Sesión</h1>
+    <div class="text-center">
+        <img class="main_logo" src="../../../assets/images/telcel_logo_login.png" alt="" style="display: block; margin: 0 auto;">
+        <h1 class="main_title_login bold" style="margin-top: 10px; ">Bienvenido Atención Alarmas Sigea</h1>
+    </div>
 
     <div class="form-group" style="margin: 20px 5%">
         <div class="d-flex align-items-center justify-content-center">
-            <span class="material-icons" style="margin-right: 10px;">account_circle</span>
+            <span class="material-symbols-outlined" style="margin-right: 10px;">
+                person
+            </span>
             <input id="user" type="input" class="form-control text-left" placeholder="Ingrese su Usuario">
         </div>
     </div>
@@ -13,14 +18,26 @@
     <div class="form-group" style="margin: 20px 5%">
         <div >
             <div class="d-flex align-items-center justify-content-center">
-                <img class="main_logo" style="width:25px; margin-right: 10px;" src="./assets/images/img_candado.png" alt="">
+                <span class="material-symbols-outlined" style="margin-right: 10px;">
+                    lock
+                </span>
                 <input id="pass" type="password" class="form-control text-left" placeholder="Ingrese Contraseña">
             </div>
         </div>
     </div>
 
-    <button id="LoginButton" type="button" class="btn btn-primary btn_fixed_footer" (click)="login()">Iniciar Sesión</button>
+    <div class="text-center" style="cursor: pointer;">
+        <a class="font-medium no-underline ml-2 ">¿Olvidaste tu contraseña?</a>
+    </div>
 
+    <div style="display: flex;">
+        <button id="LoginButton" type="button" class="w-50 btn mx-auto btn-primary btn_fixed_footer" (click)="login()">Iniciar Sesión</button>
+    </div>
+
+    <h6  class="txtlegales text-center">-----  Legales  -----</h6>
 
 </div>
+
+
+
 

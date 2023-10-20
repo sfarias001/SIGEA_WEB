@@ -1,25 +1,24 @@
-.main_title_login
-{
-    font-family: 'Roboto', sans-serif;
-    color: rgb(48, 19, 144);
-}
+    .main_title_login
+    {
+        font-family: 'Roboto', sans-serif;
+        font-size: 1rem;
+        /* color: rgb(48, 19, 144); */
+    }
 
     .main_logo {
-        width:12%;
-        height:10%;
-    } 
+        width: 50%;
+   } 
 
-.container_main_login {
+
+    .container_main_login {
         box-shadow: 3px 3px 5px;
         border-radius: 5%;
         border-style: solid;
         border-width: 1px;
         border-color: #89b0d4;
-    }
 
-    
+        height: 55%;        
 
-    .container_main_login{
         position: absolute;
         left: 0%;
         transform: translateX(-50%);
@@ -28,27 +27,49 @@
         margin:3%;
     }
 
-    .main_title_login{
-        font-size: 5vw;
-    }
     .btn_fixed_footer{
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
+        position: absolute;
+        bottom: 50px;
+        left: 0;
+        right: 0;
+    }
+
+    .txtlegales{
+        position: absolute; 
+        font-size: 0.6rem; 
+        bottom: 10px; 
+        left: 0; 
+        right: 0;
     }
 
 
     /* Tablet */
     @media (min-width: 480px) {
 
-
         .container_main_login{
             position: absolute;
+            width: 80%;
+            height: 58%;
             left: 5%;
             transform: translateX(-50%);
             top: 40%;
             transform: translateY(-50%);
             margin:3%;
+        }
+
+        .btn_fixed_footer{
+            position: absolute;
+            bottom: 50px;
+            left: 0;
+            right: 0;
+        }
+
+        .txtlegales{
+            position: absolute; 
+            font-size: 0.6rem; 
+            bottom: 10px; 
+            left: 0; 
+            right: 0;
         }
 
     }
@@ -57,21 +78,44 @@
     @media (min-width: 720px) {
 
         .main_title_login{
-            font-size: 4vw;
+            font-size: 0.8rem;
+            margin-top:20px !important;
         }
 
         .main_logo {
-            width: 35%;
-            height:100%;
+            width: 45%;
+        }
+
+        #user{
+            width: 60%;
+        }
+        #pass{
+            width: 60%;
         }
 
         .container_main_login{
             position: absolute;
+            height: 60%;
             left: 10%;
             transform: translateX(-50%);
             top: 40%;
             transform: translateY(-50%);
             margin:3%;
+        }
+
+        .btn_fixed_footer{
+            position: absolute;
+            bottom: 40px;
+            left: 0;
+            right: 0;
+        }
+
+        .txtlegales{
+            position: absolute; 
+            font-size: 0.6rem; 
+            bottom: 10px; 
+            left: 0; 
+            right: 0;
         }
 
     }
@@ -80,55 +124,36 @@
     @media (min-width: 1024px) {
 
         .main_title_login{
-            font-size: 3vw;
+            font-size: 0.8rem;
         }
 
+        .main_logo {
+            width: 50%;
+            margin-top: -20px !important;
+        }
 
         .container_main_login{
             position: absolute;
-            left: 10%;
+            width: 45%;
+            height: 75%;
+            left: 23%;
             transform: translateX(-50%);
-            top: 45%;
-            transform: translateY(-50%);
-            margin:0% 15%;
+            top: 40%;
+            transform: translateY(-50%);            
         }
 
-    }
+        .btn_fixed_footer{
+            position: absolute;
+            bottom: 100px;
+            left: 0;
+            right: 0;
+        }
 
-
-
-    label {
-    color: #546E7A;
-    display: block;
-    margin: 2px;
-    }
-
-
-
-    input[type="text"],
-    input[type="tel"],
-    select,
-    textarea {
-    box-sizing: border-box;
-    margin:4px 0;
-    width: 100%;
-    }
-
-    textarea{
-    font-size:small;
-    }
-
-
-
-    .link:active,
-    .link:hover{
-    color:#DD0000;
-    }
-
-    .error{
-    color:#E53935;
-    }
-
-    .success{
-    color:#43A047;
+        .txtlegales{
+            position: absolute; 
+            font-size: 0.7rem; 
+            bottom: 40px; 
+            left: 0; 
+            right: 0;
+        }
     }

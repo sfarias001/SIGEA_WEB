@@ -3,3 +3,57 @@
     justify-content: center;
     align-items: center;
 }
+
+
+.title_cards {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    color: rgb(48, 19, 144);
+}
+
+
+.home_main_container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  
+  .home_cards{
+    margin: 1% 0; 
+    padding: 4%;
+    box-shadow: 0 2rem 3rem var(--color-light);
+    border-radius: 1rem;
+    border-style: solid;
+    border-color: rgb(255, 255, 255);
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+  }
+
+  .home_cards {
+    max-width: 100%;
+    width: calc(50% - 2%);
+    margin: 0 auto; 
+  }
+
+  .home_cards:hover{
+    background-color: #B6EEFB;
+    
+  }
+  
+  .home_main_container .home_card_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center; 
+  }
+
+  .home_icons{
+    font-size: 5rem;
+  }

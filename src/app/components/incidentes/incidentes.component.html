@@ -1,38 +1,63 @@
 
 <app-home></app-home>
 
-<div>
+<div class="d-flex">
   <h1 class="text-center">Listado de incidentes</h1>
-  <img (click)="regIncidente()" src="../../../assets/images/add_report.png" alt="" style="cursor: pointer; max-width: 50px; float: right; margin: 1%;">
+
+  <button (click)="regIncidente()" type="button" class="btn mx-auto text-center" style=" background-color: #1F3D7C; color: white;" >
+      <span class="material-symbols-outlined">
+        add
+      </span>
+      Agregar nuevo incidente
+   </button>
+
 </div>
 
-<div style="width: 100%; overflow-x: auto; margin: 1%;">
-  <dx-data-grid
-    id="gridContainer"
-    [dataSource]="incidentes"
-    [showBorders]="true"
-    class="dx-datagrid dx-datagrid-headers dx-datagrid-rows"
-    [width]="'97%'"
-    [columnAutoWidth]="true"
-  >
-  <dxi-column dataField="Región" caption="Región" [width]="100"></dxi-column>
-  <dxi-column dataField="Inmueble" caption="Inmueble" [width]="200"></dxi-column>
-  <dxi-column dataField="Tipo_alarma" caption="Tipo_alarma" [width]="200"></dxi-column>
-  <dxi-column dataField="Partición" caption="Partición" [width]="200"></dxi-column>
-  <dxi-column dataField="Zona" caption="Zona" [width]="200"></dxi-column>
-  <dxi-column dataField="Hora" caption="Hora" [width]="200"></dxi-column>
-  <dxi-column dataField="Atiende_CRM_CMC" caption="Atiende_CRM_CMC" [width]="200"></dxi-column>
-  <dxi-column dataField="Motivo" caption="Motivo" [width]="200"></dxi-column>
-  <dxi-column dataField="Quien_reporta" caption="Quien_reporta" [width]="200"></dxi-column>
-  <dxi-column dataField="Registro_de_evento" caption="Registro_de_evento" [width]="200"></dxi-column>
-  <dxi-column dataField="Causa" caption="Causa" [width]="200"></dxi-column>
-  <dxi-column dataField="Activación_de_alarma" caption="Activación_de_alarma" [width]="200"></dxi-column>
-  <dxi-column dataField="Acción" caption="Acción" [width]="200"></dxi-column>
-  <dxi-column dataField="Estatus" caption="Estatus" [width]="200"></dxi-column>
-  <dxi-column dataField="Agregar_comentario" caption="Agregar_comentario" [width]="200"></dxi-column>
-  <dxi-column dataField="Ver_detalle" caption="Ver_detalle" [width]="200"></dxi-column>
-  <dxi-column dataField="Actualizar" caption="Actualizar" [width]="200"></dxi-column>
-  </dx-data-grid>
-</div>
+
+<dx-data-grid
+  [dataSource]="data"
+  [showBorders]="true"
+  keyExpr="ID"
+  style="width: 97%; margin: 1%;"
+
+>
+  <dxo-paging [enabled]="true"></dxo-paging>
+  <dxo-editing
+    mode="row"
+    [allowUpdating]="true"
+    [allowDeleting]="true"
+    [useIcons]="true"
+  ></dxo-editing>
+  <dxi-column dataField="Region" caption="Región" [width]="180"></dxi-column>
+  <dxi-column dataField="Inmueble" caption="Inmueble" [width]="180"></dxi-column>
+  <dxi-column dataField="Hora" caption="Hora" [width]="120"></dxi-column>
+  <dxi-column dataField="Motivo" caption="Motivo" [width]="180"></dxi-column>
+  <dxi-column dataField="QuienReporta" caption="Quien reporta" [width]="180"></dxi-column>
+  <dxi-column dataField="Estatus" caption="Estatus" [width]="130"></dxi-column>
+  <dxi-column dataField="Acciones" type="buttons" [width]="250">
+    <dxi-button
+      hint="Agregar Comentario"
+      icon="comment"
+      [onClick]="agregarComentario"
+      title="Agregar comentario"
+    ></dxi-button>
+
+    <dxi-button
+      hint="Ver Detalle"
+      icon="activefolder"
+      [onClick]="verDetalle"
+      title="Ver detalle"
+    ></dxi-button>
+
+    <dxi-button
+      hint="Actualizar"
+      icon="refresh"
+      [onClick]="actualizar"
+      title="Actualizar"
+    ></dxi-button>
+
+  </dxi-column>
+</dx-data-grid>
+
 
 
