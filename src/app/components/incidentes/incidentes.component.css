@@ -1,6 +1,4 @@
-/* .table_incidents {
-    max-height: 300px; 
-    overflow: auto; 
-    white-space: nowrap; 
-    overflow-x: auto; 
-  } */
+.custom-header {
+  background-color: #1F3D7C; 
+  color: white; 
+}

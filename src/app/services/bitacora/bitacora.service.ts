@@ -6,7 +6,8 @@ const bitacora: Bitacora[] = [
   {
     Fecha: '10/10/2023',
     Titulo: 'Super Mart of the West 1',
-    DetalleImagen: {
+    DetalleImagen:
+     {
       imagenes: [
         {
           url: "../../../assets/images/add_report.png",

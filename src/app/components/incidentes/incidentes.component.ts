@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
 import { MenuItem } from 'primeng/api';
+import { Router } from '@angular/router';
 
-import { Service, Incidente } from './incidentes.service';
+
+
+import { Service, Incidente } from '../../services/incidentes/incidentes.service';
 import Swal from 'sweetalert2';
 
 
@@ -15,13 +18,122 @@ import Swal from 'sweetalert2';
 
 })
 export class IncidentesComponent {
-  incidentes: Incidente[]; 
+
+  incidentes: Incidente[] = [];
 
 
-  constructor(service: Service) {
+  data: any[] = [
+    {
+      ID: 1,
+      Region: 'Región 1',
+      Inmueble: 'Inmueble 1',
+      Tipo_alarma: 'alarma 1',
+      Particion: 'particion 1',
+      Zona: 'Zona 1',
+      Descripcion: 'Prueba',
+      Fecha: '10/03/2023',
+      Hora: '10:00 AM',
+      AtiendeCRM_CMC: 'CRM',
+      Motivo: 'Razón 1',
+      QuienReporta: 'Usuario 1',
+      Registro_evento: 'Prueba',
+      Causa: 'alerta de camara',
+      Activacion_alarma: 'camara',
+      Accion: 'sin acción',
+      Estatus: 'Activo',
+      Acciones: `
+        <i class="material-icons">add_comment</i>
+        <i class="material-icons">visibility</i>
+        <i class="material-icons">update</i>
+      `
+    },
+    {
+      ID: 2,
+      Region: 'Región 1',
+      Inmueble: 'Inmueble 1',
+      Tipo_alarma: 'alarma 1',
+      Particion: 'particion 1',
+      Zona: 'Zona 1',
+      Descripcion: 'Prueba',
+      Fecha: '10/03/2023',
+      Hora: '10:00 AM',
+      AtiendeCRM_CMC: 'CRM',
+      Motivo: 'Razón 1',
+      QuienReporta: 'Usuario 1',
+      Registro_evento: 'Prueba',
+      Causa: 'alerta de camara',
+      Activacion_alarma: 'camara',
+      Accion: 'sin acción',
+      Estatus: 'Activo',
+      Acciones: `
+        <i class="material-icons">add_comment</i>
+        <i class="material-icons">visibility</i>
+        <i class="material-icons">update</i>
+      `
+    },
+    {
+      ID: 3,
+      Region: 'Región 1',
+      Inmueble: 'Inmueble 1',
+      Tipo_alarma: 'alarma 1',
+      Particion: 'particion 1',
+      Zona: 'Zona 1',
+      Descripcion: 'Prueba',
+      Fecha: '10/03/2023',
+      Hora: '10:00 AM',
+      AtiendeCRM_CMC: 'CRM',
+      Motivo: 'Razón 1',
+      QuienReporta: 'Usuario 1',
+      Registro_evento: 'Prueba',
+      Causa: 'alerta de camara',
+      Activacion_alarma: 'camara',
+      Accion: 'sin acción',
+      Estatus: 'Activo',
+      Acciones: `
+        <i class="material-icons">add_comment</i>
+        <i class="material-icons">visibility</i>
+        <i class="material-icons">update</i>
+      `
+    },
+    ];
+
+
+  constructor(private router: Router, service: Service) {
     this.incidentes = service.getIncidentes();
+
+
+    this.verDetalle = this.verDetalle.bind(this);
   }
+
   
+  agregarComentario() {
+    Swal.fire({
+      title: 'Agregar comentario',
+      html: `
+
+      <div>
+        <h6 style="float:left;">Incidente no:</h6>
+      </div>
+        
+      `,
+      confirmButtonText: 'Agregar',
+      width: '85%',
+      preConfirm: () => {
+
+      }
+    });
+  }
+
+    actualizar() {
+      
+    }
+
+
+    verDetalle(e: any){
+      this.router.navigate(['/detalle-incidente'])      
+    }
+  
+  // Navegación menu
   items: MenuItem[] | undefined;
 
   ngOnInit() {
@@ -36,12 +148,15 @@ export class IncidentesComponent {
 
 
 
-// Sweet alert
-formData= {
-  nombre: '',
-  email: ''
-}
+  // Sweet alert
+  formData= {
+    nombre: '',
+    email: ''
+  }
 
+
+
+// Agregar incidente
 regIncidente() {
   Swal.fire({
     title: 'Nuevo incidente',

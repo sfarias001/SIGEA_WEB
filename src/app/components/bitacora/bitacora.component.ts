@@ -5,12 +5,15 @@ import { Service } from '../../services/bitacora/bitacora.service';
 import Swal from 'sweetalert2';
 import { Bitacora } from 'src/app/models/bitacora';
 
+
 @Component({
   selector: 'app-bitacora',
   templateUrl: './bitacora.component.html',
   styleUrls: ['./bitacora.component.css'],
   providers: [Service],
 })
+
+
 export class BitacoraComponent implements OnInit {
   bitacoraItems: Bitacora[] = [];
   pageSize: number = 10;
@@ -31,7 +34,7 @@ export class BitacoraComponent implements OnInit {
         this.imagen = ruta;
         this.imagenTemplate = `
     <ng-template let-data="data">
-      <img src="${ruta}" alt="Imagen" style="width: 35px;">
+      <img src="${ruta}" alt="Imagen" style="width: 35px; cursor:pointer ;">
     </ng-template>
   `;
       }
@@ -79,7 +82,7 @@ export class BitacoraComponent implements OnInit {
 
   regNovedad() {
     Swal.fire({
-      title: 'Registro de novedades',
+      title: 'Registro de alarmas',
       html: `
 
           <form style="display: flex;">

@@ -2,3 +2,59 @@
 
 <h1 class="text-center">Actividades de alto riesgo</h1>
 
+<dx-data-grid
+  [dataSource]="altoRiesgoData"
+  [showBorders]="true"
+  keyExpr="ID"
+  style="width: 97%; margin: 1%;"
+
+>
+  <dxo-paging [enabled]="true"></dxo-paging>
+  <dxo-editing
+    mode="row"
+    [allowUpdating]="true"
+    [allowDeleting]="true"
+    [useIcons]="true"
+  ></dxo-editing>
+  
+  <dxi-column dataField="Nombre del solicitante" caption="nombreSolicitante" [width]="180"></dxi-column>
+  <dxi-column dataField="Nombre del proveedor" caption="nombreProveedor" [width]="180"></dxi-column>
+  <dxi-column dataField="Radio base" caption="radioBase" [width]="120"></dxi-column>
+  <dxi-column dataField="Estatus" caption="Estatus" [width]="130"></dxi-column>
+  
+  <dxi-column dataField="Validar" type="buttons" [width]="250">
+    
+    <dxi-button
+      hint="Validar"
+      icon="comment"
+      [onClick]="validarTarea"
+      title="Validar"
+    ></dxi-button>
+
+  </dxi-column>
+
+  <dxi-column dataField="Cancelar" type="buttons" [width]="250">
+    
+    <dxi-button
+      hint="Cancelar"
+      icon="comment"
+      [onClick]="Cancelar"
+      title="Cancelar"
+    ></dxi-button>
+
+  </dxi-column>
+
+
+  <dxi-column dataField="Detalle" type="buttons" [width]="250">
+    
+    <dxi-button
+      hint="Detalle"
+      icon="comment"
+      [onClick]="Detalle"
+      title="Detalle"
+    ></dxi-button>
+
+  </dxi-column>
+
+
+</dx-data-grid>

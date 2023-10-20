@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
 import { MenuItem } from 'primeng/api';
+import { Router } from '@angular/router';
+
+import Swal from 'sweetalert2';
+
+// import { Service, altoRiesgo } from '../../services/altoRiesgo/altoRiesgo.service';
 
 
 @Component({
@@ -8,6 +13,79 @@ import { MenuItem } from 'primeng/api';
   styleUrls: ['./alto-riesgo.component.css']
 })
 export class AltoRiesgoComponent {
+
+
+  altoRiesgoData: any[] = [
+    {
+      ID: 1,
+      nombreSolicitante: 'prueba prueba',
+      nombreProveedor: 'prueba prueba',
+      radioBase: 'Polanco',
+      Estatus: 'Abierto',
+      validarTarea: `,
+        <i class="material-icons">add_comment</i>
+        `,
+      Cancelar: `
+      <i class="material-icons">add_comment</i>
+      `,
+      Detalle: `
+      <i class="material-icons">add_comment</i>
+      `,
+
+    },
+    {
+      ID: 2,
+      nombreSolicitante: 'prueba prueba',
+      nombreProveedor: 'prueba prueba',
+      radioBase: 'Polanco',
+      Estatus: 'Abierto',
+      validarTarea: `,
+        <i class="material-icons">add_comment</i>
+        `,
+      Cancelar: `
+      <i class="material-icons">add_comment</i>
+      `,
+      Detalle: `
+      <i class="material-icons">add_comment</i>
+      `,
+    },
+    {
+      ID: 3,
+      nombreSolicitante: 'prueba prueba',
+      nombreProveedor: 'prueba prueba',
+      radioBase: 'Polanco',
+      Estatus: 'Abierto',
+      validarTarea: `,
+        <i class="material-icons">add_comment</i>
+        `,
+      Cancelar: `
+      <i class="material-icons">add_comment</i>
+      `,
+      Detalle: `
+      <i class="material-icons">add_comment</i>
+      `,
+    },
+    ];
+
+
+
+    // Evento de botones
+
+    
+    validarTarea() {
+      
+    }
+
+    
+    Cancelar() {
+      
+    }
+
+    
+    Detalle() {
+      
+    }
+
 
 
   items: MenuItem[] | undefined;
